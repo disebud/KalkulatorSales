@@ -14,8 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button btnHitung;
     EditText etNama,etHarga,etDp,etTenor,etBunga;
-    String nama;
-    Integer harga,dp,tenor,bunga;
+    String nama, harga,dp,tenor,bunga;
 
 
     @Override
@@ -34,10 +33,11 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             nama = etNama.getText().toString();
-            harga = Integer.parseInt(etHarga.getText().toString());
-            dp = Integer.parseInt(etDp.getText().toString());
-            tenor = Integer.parseInt(etTenor.getText().toString());
-            bunga = Integer.parseInt(etBunga.getText().toString());
+            harga = etHarga.getText().toString();
+            dp = etDp.getText().toString();
+            tenor = etTenor.getText().toString();
+            bunga = etBunga.getText().toString();
+//            bunga = Integer.parseInt(etBunga.getText().toString());
 
             Intent i = new Intent(MainActivity.this,HasilActivity.class);
 

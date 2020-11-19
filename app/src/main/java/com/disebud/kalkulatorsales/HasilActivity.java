@@ -37,21 +37,22 @@ public class HasilActivity extends AppCompatActivity {
         nama = getIntent().getStringExtra("nama");
         tvNama.setText(nama);
 
-        harga = getIntent().getIntExtra("harga",0);
+        harga = Integer.parseInt(getIntent().getStringExtra("harga"));
+        //            bunga = Integer.parseInt(etBunga.getText().toString());
         String hargaMotor = "Rp." + nf.format(harga);
         tvHarga.setText(hargaMotor);
 
-        dp = getIntent().getIntExtra("dp",0);
+        dp = Integer.parseInt(getIntent().getStringExtra("dp"));
         totalDp = harga * dp/100 ;
         String totalDpRp = "Rp." + nf.format(totalDp);
         tvDp.setText(totalDpRp);
 
-        tenor = getIntent().getIntExtra("tenor",0);
+        tenor = Integer.parseInt(getIntent().getStringExtra("tenor"));
         pokokHutang = harga - totalDp ;
         String pokokHutangRp = "Rp." + nf.format(pokokHutang);
         tvPokokHutang.setText(pokokHutangRp);
 
-        bunga = getIntent().getIntExtra("bunga",0);
+        bunga = Integer.parseInt(getIntent().getStringExtra("bunga"));
         totalBunga =  tenor * bunga * pokokHutang /100;
         String totalBungaRp = "Rp." + nf.format(totalBunga);
         tvBunga.setText(totalBungaRp);
